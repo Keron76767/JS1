@@ -1,0 +1,23 @@
+﻿<script>
+    const a = parseFloat(prompt("Введите коэффициент a:"));
+    const b = parseFloat(prompt("Введите коэффициент b:"));
+    const c = parseFloat(prompt("Введите коэффициент c:"));
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Пожалуйста, введите числа для всех коэффициентов.");
+    }
+
+    if (a === 0) {
+        alert("Уравнение не является квадратным.");
+    }
+
+    const discriminant = b * b - 4 * a * c;
+
+    if (discriminant > 0) {
+        alert("Уравнение имеет два решения.");
+    } else if (discriminant === 0) {
+        alert("Уравнение имеет одно решение.");
+    } else {
+        alert("Уравнение не имеет реальных решений.");
+    }
+</script>

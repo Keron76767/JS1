@@ -1,0 +1,17 @@
+﻿<script>
+    const userInput = prompt("Введите число:");
+
+    if (userInput === null) {
+        alert("Вы отменили ввод.");
+    }
+    else {
+        const number = parseFloat(userInput);
+
+        if (!isNaN(number)) {
+            alert(`Вы ввели число: ${number}`);
+        }
+        else {
+            alert("Введенное значение не является числом.");
+        }
+    }
+</script>

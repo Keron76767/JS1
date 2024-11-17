@@ -1,0 +1,16 @@
+﻿<script>
+    const userInput = prompt("Введите число:");
+    const number = parseFloat(userInput);
+
+    if (!isNaN(number)) {
+        if (number < 0) {
+            alert(`Введенное число ${number} отрицательное.`);
+        } else if (number > 0) {
+            alert(`Введенное число ${number} положительное.`);
+        } else {
+            alert(`Введенное число ${number} равно нулю.`);
+        }
+    } else {
+        alert("Введенное значение не является числом.");
+    }
+</script>

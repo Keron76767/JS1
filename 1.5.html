@@ -1,0 +1,88 @@
+﻿<script>
+    const method = parseInt(prompt("Выберите способ вычисления (1 - с использованием Math, 2 - без использования Math):"));
+
+    switch (method) {
+        case 1:
+            calculateWithMath();
+            break;
+        case 2:
+            calculateWithoutMath();
+            break;
+        default:
+            alert("Выбран неправильный способ. Пожалуйста, введите 1 или 2.");
+    }
+
+    function calculateWithMath() {
+        const num1 = parseFloat(prompt("Введите первое число:"));
+        const num2 = parseFloat(prompt("Введите второе число:"));
+        const num3 = parseFloat(prompt("Введите третье число:"));
+        const num4 = parseFloat(prompt("Введите четвертое число:"));
+
+        if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4)) {
+            alert("Пожалуйста, введите числовые значения для всех чисел.");
+            return;
+        }
+
+        const maxSum = Math.max(num1 + num2, num1 + num3, num1 + num4, num2 + num3, num2 + num4, num3 + num4);
+
+        let pair = "";
+
+        if (maxSum === num1 + num2) {
+            pair = `${num1} и ${num2}`;
+        } else if (maxSum === num1 + num3) {
+            pair = `${num1} и ${num3}`;
+        } else if (maxSum === num1 + num4) {
+            pair = `${num1} и ${num4}`;
+        } else if (maxSum === num2 + num3) {
+            pair = `${num2} и ${num3}`;
+        } else if (maxSum === num2 + num4) {
+            pair = `${num2} и ${num4}`;
+        } else {
+            pair = `${num3} и ${num4}`;
+        }
+
+        alert(`Пара чисел с максимальной суммой: ${pair} (${maxSum})`);
+    }
+
+    function calculateWithoutMath() {
+        const num1 = parseFloat(prompt("Введите первое число:"));
+        const num2 = parseFloat(prompt("Введите второе число:"));
+        const num3 = parseFloat(prompt("Введите третье число:"));
+        const num4 = parseFloat(prompt("Введите четвертое число:"));
+
+        if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4)) {
+            alert("Пожалуйста, введите числовые значения для всех чисел.");
+            return;
+        }
+
+        const sum1 = num1 + num2;
+        const sum2 = num1 + num3;
+        const sum3 = num1 + num4;
+        const sum4 = num2 + num3;
+        const sum5 = num2 + num4;
+        const sum6 = num3 + num4
+        let maxSum = sum1;
+        let pair = `${num1} и ${num2}`
+        if (sum2 > maxSum) {
+            maxSum = sum2;
+            pair = `${num1} и ${num3}`;
+        }
+        if (sum3 > maxSum) {
+            maxSum = sum3;
+            pair = `${num1} и ${num4}`;
+        }
+        if (sum4 > maxSum) {
+            maxSum = sum4;
+            pair = `${num2} и ${num3}`;
+        }
+        if (sum5 > maxSum) {
+            maxSum = sum5;
+            pair = `${num2} и ${num4}`;
+        }
+        if (sum6 > maxSum) {
+            maxSum = sum6;
+            pair = `${num3} и ${num4}`;
+        }
+        alert(`Пара чисел с максимальной суммой: ${pair} (${maxSum})`);
+    }
+</script>
